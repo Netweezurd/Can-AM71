@@ -1,0 +1,31 @@
+
+
+DefaultLivery="17Lola.DDS"
+
+HDVehicle=LolaT260.hdv          
+Graphics=LolaT260.gen
+Spinner=LolaT260_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Cameras=T260_cams.cam
+Sounds=canam2.sfx
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=LolaT260_cockpitinfo.ini
+Upgrades=Lola_upgrades.ini
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+
+Number=17
+
+Driver="Driver"
+PitGroup="3"
+Description="Lola T260 17"
+Engine="Chevrolet V8"
+Manufacturer="Lola Cars"
+
+Classes="CanAm3"
+
+Team="Lola T260 17"
+FullTeamName="Lola T260 17"
+Category="71 CanAm, Lola T260"

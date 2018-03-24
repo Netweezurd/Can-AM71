@@ -1,0 +1,144 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// This file specifices how to generate the vehicle graphics for the options car spinner only.
+// It is pointed to by one or more *.veh files.
+//
+// All information except tokens are copied directly.
+// Tokens have the format "<value>" where value is one of the following:
+//   ID        - this is replaced by the proper slot identification (000, 001, etc.), or
+//   1,2,3,etc - this is replaced by the first 1,2,3 characters of the
+//               vehicle filename
+//   VEHDIR    - this is replaced with the proper vehicles directory (e.g. E:\Data\season01\vehicles)
+//   TEAMDIR   - this is replaced with the proper team directory (e.g. season01\vehicles\williams)
+//   SPIN      - for the vehicle spinner in the options only
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//----------------------------------------
+
+SearchPath=<VEHDIR>
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3\BRMP154
+SearchPath=<VEHDIR>\CanAm3\BRMP154\Team
+
+MASFile=brmP154\brmP154.mas
+
+
+ReflectPlane=(0.0, -1.0, 0.0, 0.0)
+
+//----------------------------------------
+Instance=SLOT<ID>
+{
+  Moveable=True
+  MeshFile=P154_body_Max2.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+  MeshFile=P154_body_Max2.gmt CollTarget=False HATTarget=False ShadowObject=(Dynamic, Solid, 256, 256) LODIn=(0.0) LODOut=(200.0) Reflect=True
+  //MeshFile=gauges_brm.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(50.0) Reflect=True
+
+  Actor=VEHICLE
+////////////////////////////////////Steering Wheel/////////////////
+  Instance=wheel
+  {
+    Moveable=True
+    MeshFile=P154_stwheel.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//////////////////////////////////// Front wing /////////////////
+Instance=Fwing
+   {
+    Moveable=True
+    MeshFile=P154_Fbody.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True 
+   }
+///////////////////////////////////Rear wing/////////////////
+  Instance=Rwing
+  {
+    Moveable=True
+    MeshFile=P154_rwing.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True 
+  }
+
+// ////////////////////////////////////AirBox/////////////////
+//  Instance=Airbox
+//  {
+//    Moveable=True
+//    MeshFile=P154_airbox.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+//  }
+//////////////////////////////////// Suspension/////////////////
+  Instance=DEBRIS5
+  {
+    Moveable=True
+    MeshFile=P154_fl_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS6
+  {
+    Moveable=True
+    MeshFile=P154_fr_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS7
+  {
+    Moveable=True
+    MeshFile=P154_rl_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS8
+  {
+    Moveable=True
+    MeshFile=P154_rr_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+//////////////////////////////////// TV CAM /////////////////////////////////////////////////////////////////////////////////
+  Instance=DEBRIS11
+  {
+    Moveable=True
+    MeshFile=P154_exaust.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+//////////////////////////////////// MIRRORS ///////////////////////////////////////////////////////////////////////////////
+  Instance=Mirrors
+  {
+    Moveable=True
+    MeshFile=P154_MIRRORS_OUT.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+/////////////////////////////////////////////////TIRES////////////////////////////////////////////////////////
+/////////////////////////////////Left Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=LFTIRE
+  {
+    Moveable=True
+    MeshFile=P154_Wheel_FL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) ShadowReceiver=True
+  }
+
+  Instance=LFSpindle
+  {
+    Moveable=True
+    MeshFile=P154_fl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Right Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=RFTIRE
+  {
+   Moveable=True
+   MeshFile=P154_Wheel_FR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) ShadowReceiver=True
+  }
+
+  Instance=RFSpindle
+  {
+    Moveable=True
+    MeshFile=P154_fr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Left Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=LRTIRE
+  {
+    Moveable=True
+     MeshFile=P154_Wheel_RL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) ShadowReceiver=True
+  }
+
+  Instance=LRSpindle
+  {
+    Moveable=True
+    MeshFile=P154_rl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Right Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=RRTIRE
+  {
+    Moveable=True
+        MeshFile=P154_Wheel_RR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) ShadowReceiver=True
+  }
+
+  Instance=RRSpindle
+  {
+    Moveable=True
+    MeshFile=P154_rr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+}

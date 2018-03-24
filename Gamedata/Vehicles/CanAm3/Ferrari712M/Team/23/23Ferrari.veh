@@ -1,0 +1,29 @@
+
+
+DefaultLivery="23Ferrari.DDS"
+
+HDVehicle=ferrari712m.hdv          
+Graphics=ferrari712m.gen
+Spinner=ferrari712m_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Cameras=712M_cams.cam               // Defaults to cams.cfg in UserData directory
+Sounds=Ferrari712.sfx
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=ferrari712m_cockpitinfo.ini
+Upgrades=ferrari712m_upgrades.ini
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+Number=23
+PitGroup="10"
+Driver="Driver"
+Description="Ferrari 712M 23"
+Engine="Ferrari V12"
+Manufacturer="Ferrari"
+
+Classes="CanAm3"
+
+Team="Ferrari 712M 23"
+FullTeamName="Ferrari 712M 23"
+Category="71 CanAm, Ferrari 712M"

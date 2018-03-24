@@ -1,0 +1,28 @@
+
+DefaultLivery="11Shadow.DDS"
+
+HDVehicle=ShadowMk2.hdv          
+Graphics=ShadowMk2.gen
+Spinner=ShadowMk2_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Sounds=CanAm3.sfx
+Cameras=Shadow_cams.cam               // Defaults to cams.cfg in UserData directory
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=ShadowMk2_cockpitinfo.ini
+Upgrades=ShadowMk2_upgrades.ini
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+Number=11
+PitGroup="6"
+Driver="Driver"
+Description="Shadow Mk2 11"
+Engine="Chevrolet"
+Manufacturer="Shadow"
+
+Classes="CanAm3"
+
+Team="Shadow Mk2 11"
+FullTeamName="UOP Shadow 11"
+Category="71 CanAm, Shadow Mk2"

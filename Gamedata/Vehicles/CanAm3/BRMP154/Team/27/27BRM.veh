@@ -1,0 +1,30 @@
+
+
+DefaultLivery="27BRM.dds"
+
+HDVehicle=brmp154.hdv          
+Graphics=brmp154.gen
+Spinner=brmp154_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Cameras=BRM_Cams.cam               // Defaults to cams.cfg in UserData directory
+Sounds=CanAm2.sfx
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=brmp154_cockpitinfo.ini
+Upgrades=BRM_upgrades.ini
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+
+Number=27
+PitGroup="9"
+Driver="Driver"
+Description="BRM P154 27"
+Engine="Chevrolet V8"
+Manufacturer="British Racing Motors"
+
+Classes="CanAm3"
+
+Team="BRM P154 27"
+FullTeamName="BRM P154 27"
+Category="71 CanAm, BRM P154"

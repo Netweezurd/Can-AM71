@@ -1,0 +1,30 @@
+
+
+DefaultLivery="66Porsche917.DDS"
+
+HDVehicle=Porsche917.hdv          
+Graphics=Porsche917.gen
+Spinner=Porsche917_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Cameras=917_cams.cam               // Defaults to cams.cfg in UserData directory
+Sounds=Porsche.sfx
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=Porsche917_cockpitinfo.ini
+Upgrades=Porsche_upgrades.ini 
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+Number=66
+
+Driver="Driver"
+PitGroup="1"
+Description="Porsche 91710 66"
+Engine="Porsche Flat12"
+Manufacturer="Porsche"
+Classes="CanAm3"
+
+Team="Porsche 91710 66"
+FullTeamName="Porsche 91710 66"
+
+Category="71 CanAm, Porsche 91710"

@@ -1,0 +1,30 @@
+
+DefaultLivery="5McLaren.DDS"
+
+HDVehicle=MclarenM8.hdv          
+Graphics=MclarenM8.gen
+Spinner=MclarenM8_Spinner.gen          
+GenString=                          // Used to generate GMT names in *.gen file
+Cameras=McLaren_cams.cam               // Defaults to cams.cfg in UserData directory
+Sounds=CanAm2.sfx
+HeadPhysics=headphysics.ini         // Affects driver eyepoint only
+Cockpit=MclarenM8_cockpitinfo.ini
+Upgrades=McLaren_upgrades.ini
+
+
+//////////////////////////TEAM HISTORY AND INFORMATION///////////////////////////////////////////
+
+Number=5
+
+Driver="Driver"
+PitGroup="13"
+Description="McLaren M8F 5"
+Engine="Chevrolet V8"
+Manufacturer="McLaren Cars"
+
+Classes="CanAm3"
+
+Team="McLaren M8F 5"
+FullTeamName="McLaren M8F 5"
+
+Category="71 CanAm, McLaren M8F"

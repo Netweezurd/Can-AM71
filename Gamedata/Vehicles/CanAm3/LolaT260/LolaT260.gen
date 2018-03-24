@@ -1,0 +1,229 @@
+
+// This file specifices how to generate the vehicle graphics.
+// It is pointed to by one or more *.veh files.
+//
+// All information except tokens are copied directly.
+// Tokens have the format "<value>" where value is one of the following:
+//   ID        - this is replaced by the proper slot identification (000, 001, etc.), or
+//   1,2,3,etc - this is replaced by the first 1,2,3 characters of the
+//               vehicle filename
+//   VEHDIR    - this is replaced with the proper vehicles directory (e.g. E:\Data\season01\vehicles)
+//   TEAMDIR   - this is replaced with the proper team directory (e.g. season01\vehicles\williams)
+//   SPIN      - for the vehicle spinner in the options only
+//   NOTSPIN   - for everything EXCEPT the vehicle spinner
+//   LOW       - low detail only
+//   MED       - medium detail only
+//   HIGH      - high detail only
+//   MAX       - maximum detail only
+//   DASHLOW   - low detail dash
+//   DASHHIGH  - high detail dash
+//
+// Example:
+//   For slot #2 using the vehicle file "nicecar.veh", the line
+//   "Instance=SLOT<ID>   MeshFile=<123>gva.gmt" would be replaced with
+//   "Instance=SLOT002   MeshFile=nicgva.gmt"
+
+
+//----------------------------------------
+
+SearchPath=<VEHDIR>
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3\LolaT260
+SearchPath=<VEHDIR>\CanAm3\LolaT260\Team
+
+MASFile=LolaT260\LolaT260.mas
+
+//----------------------------------------
+
+Instance=SLOT<ID>
+{
+  Moveable=True
+//------------------------------------MAX CAR SETTINGS---------------------------------------------
+<MAX> MeshFile=T260_body_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) ShadowReceiver=True
+<MAX> MeshFile=T260_body_med.gmt CollTarget=False HATTarget=False LODIn=(100.0) LODOut=(300.0) ShadowReceiver=True
+<MAX> MeshFile=T260_body_low.gmt CollTarget=False HATTarget=False LODIn=(300.0) LODOut=(1000.0) ShadowReceiver=True
+//------------------------------------HIGH CAR SETTINGS--------------------------------------------
+<HIGH> MeshFile=T260_body_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) ShadowReceiver=True
+<HIGH> MeshFile=T260_body_med.gmt CollTarget=False HATTarget=False LODIn=(100.0) LODOut=(200.0) ShadowReceiver=True
+<HIGH> MeshFile=T260_body_low.gmt CollTarget=False HATTarget=False LODIn=(200.0) LODOut=(1000.0) ShadowReceiver=True
+//------------------------------------MED CAR SETTINGS---------------------------------------------
+//<MED> MeshFile=T260_body_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(1000.0) ShadowReceiver=True
+<MED> MeshFile=T260_body_med.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(200.0) ShadowReceiver=True
+<MED> MeshFile=T260_body_low.gmt CollTarget=False HATTarget=False LODIn=(200.0) LODOut=(1000.0) ShadowReceiver=True
+//------------------------------------LOW CAR SETTINGS---------------------------------------------
+<LOW> MeshFile=T260_body_Med.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) ShadowReceiver=True
+<LOW> MeshFile=T260_body_low.gmt CollTarget=False HATTarget=False LODIn=(100.0) LODOut=(1000.0) ShadowReceiver=True
+//------------------------------------SHADOW AND COLLISION OBJECTS---------------------------------
+MeshFile=T260_shad.gmt Render=False CollTarget=False HATTarget=False ShadowObject=(True, Solid, 512, 512) LODIn=(0.0) LODOut=(200.0)
+MeshFile=T260_coll.gmt Render=False CollTarget=True HATTarget=False LODIn=(0.0) LODOut=(200.0)
+
+  Actor=VEHICLE
+
+Instance=COCKPIT
+{
+  Moveable=True
+  MeshFile=T260_cockpit2.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(5.0) ShadowReceiver=True
+ 
+}
+
+////////////////////////////////////Steering Wheel/////////////////
+  Instance=wheel
+  {
+    Moveable=True
+    MeshFile=<WHEEL> CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True VisGroups=(32)
+    }
+//////////////////////////////////////////////////////////////////
+////////////////////////////////////Front wing/////////////////
+ Instance=Fwing
+   {
+    Moveable=True
+    MeshFile=T260_Fbody.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(100.0) Reflect=True 
+    MeshFile=T260_Fbody.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(100.0) LODOut=(350.0) ShadowReceiver=True
+    MeshFile=T260_Fbody.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(350.0) LODOut=(1000.0) ShadowReceiver=True
+   }
+////////////////////////////////////Rear wing/////////////////
+  Instance=Rwing
+  {
+    Moveable=True
+    MeshFile=T260_rwing2.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(100.0) ShadowReceiver=True
+    MeshFile=T260_rwing2.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(100.0) LODOut=(350.0) ShadowReceiver=True
+    MeshFile=T260_rwing2.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(350.0) LODOut=(1000.0) ShadowReceiver=True
+  }
+
+////////////////////////////////////Backfire/////////////////
+  Instance=backfire
+  {
+    Moveable=True
+    MeshFile=backfire.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+
+//////////////////////////////////// Suspension/////////////////
+  Instance=DEBRIS5
+  {
+    Moveable=True
+    MeshFile=T260_fl_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS6
+  {
+    Moveable=True
+    MeshFile=T260_fr_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS7
+  {
+    Moveable=True
+   MeshFile=T260_rl_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS8
+  {
+    Moveable=True
+    MeshFile=T260_rr_susp.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+  Instance=DEBRIS9
+  {
+    Moveable=True
+    MeshFile=T260_Rbody.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Instance=DEBRIS11
+  {
+    Moveable=True
+    MeshFile=T260_exaust.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+  }
+//////////////////////////////////// MIRRORS ///////////////////////////////////////////////////////////////////////////////
+//  Instance=DSMirror
+//  {
+//    Moveable=True
+//    MeshFile=T260_mirrorR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+//  }
+//  Instance=PSMirror
+//  {
+//    Moveable=True
+//    MeshFile=T260_mirrorL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) ShadowReceiver=True
+//  }
+//////////////////////////////////// DRIVER ////////////////////////////////////////////////////////////////////////////////
+  Instance=Driver
+  {
+    Moveable=True
+    MeshFile=T260_driver.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) ShadowReceiver=True
+  }
+Instance=Helmet
+  {
+   Moveable=True
+   MeshFile=T260_helmet.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(300.0) ShadowReceiver=True
+  }
+
+/////////////////////////////////////////////////TIRES////////////////////////////////////////////////////////
+/////////////////////////////////Left Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=LFTIRE
+  {
+    Moveable=True
+    MeshFile=T260_Wheel_FL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(8.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_FL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(8.00) LODOut=(20.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_FL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(20.00) LODOut=(500.0) ShadowReceiver=True
+  }
+
+  Instance=LFSpindle
+  {
+    Moveable=True
+    MeshFile=T260_fl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Right Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=RFTIRE
+  {
+   Moveable=True
+   MeshFile=T260_Wheel_FR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(8.0) ShadowReceiver=True
+   MeshFile=T260_Wheel_FR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(8.00) LODOut=(20.0) ShadowReceiver=True
+   MeshFile=T260_Wheel_FR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(20.00) LODOut=(500.0) ShadowReceiver=True
+  }
+
+  Instance=RFSpindle
+  {
+    Moveable=True
+    MeshFile=T260_fr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Left Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=LRTIRE
+  {
+    Moveable=True
+     MeshFile=T260_Wheel_RL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(8.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_RL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(8.00) LODOut=(20.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_RL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(20.00) LODOut=(500.0) ShadowReceiver=True
+  }
+
+  Instance=LRSpindle
+  {
+    Moveable=True
+    MeshFile=T260_rl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+/////////////////////////////////Right Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=RRTIRE
+  {
+    Moveable=True
+    MeshFile=T260_Wheel_RR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(8.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_RR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(8.00) LODOut=(20.0) ShadowReceiver=True
+    MeshFile=T260_Wheel_RR.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(20.00) LODOut=(500.0) ShadowReceiver=True
+  }
+
+  Instance=RRSpindle
+  {
+    Moveable=True
+    MeshFile=T260_rr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) ShadowReceiver=True
+  }
+
+Instance=BLIGHTDS   //Brakelights -Driver Side
+  {
+    Moveable=True
+    MeshFile=blglo_DS.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(200.0)
+  }
+
+Instance=BLIGHTPS   //Brakelights -Passenger Side
+  {
+    Moveable=True
+    MeshFile=blglo_PS.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(200.0)
+  }
+
+
+}

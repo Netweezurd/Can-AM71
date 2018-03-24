@@ -1,0 +1,467 @@
+// 
+[GENERAL]
+Rules=0
+GarageDisplayFlags=43
+Mass=900
+Inertia=(1159.0677369126,1274.720855465,365.2528)
+FuelTankPos=(0,0.15,-1.25)
+FuelTankMotion=(1000,1)
+Notes=""
+Symmetric=1
+DamageFile=brmP154_damage.ini
+CGHeight=0.21799948351748
+CGRightRange=(0.5,0,0)
+CGRightsetting=0
+CGRearRange=(0.6,0,0)
+CGRearSetting=0
+WedgeRange=(0,0,0)
+WedgeSetting=0
+WedgePushrod=0
+GraphicalOffset=(0,-0.035,0)
+Undertray00=(0.381,0.00321395313967646,-1.6446)
+Undertray01=(-0.381,0.00321395313967646,-1.6446)
+Undertray02=(0.37338,-0.00241046485475734,1.5446)
+Undertray03=(-0.37338,-0.00241046485475734,1.5446)
+UndertrayParams=(500000,15000,0.1)
+TireBrand=CanAm2_tyres.tbc
+FrontTireCompoundSetting=0
+RearTireCompoundSetting=0
+FuelRange=(1,1,80)
+FuelSetting=57
+NumPitstopsRange=(0,1,4)
+NumPitstopsSetting=1
+Pitstop1Range=(1,1,80)
+Pitstop1Setting=15
+Pitstop2Range=(1,1,35)
+Pitstop2Setting=30
+AIAimSpeedsPerWP=(32.0, 55.0, 75.0, 90.0, 110.0, 130.0, 150.0, 170.0) // speeds at which to look ahead X waypoints (spaced roughly 5 meters apart)
+AISlipReaction=(500.0, 30.0)
+AICornerReductionBase=1
+AIMinPassesPerTick=3	// minimum passes per tick (can use more accurate spring/damper/torque values, but takes more CPU)
+AIRotationThreshold=0.2	// rotation threshold (rads/sec) to temporarily increment passes per tick
+AIEvenSuspension=0	// averages out spring and damper rates to improve stability (0.0 - 1.0)
+AISpringRate=1		// spring rate adjustment for AI physics
+AIDamperSlow=0.5	// contribution of average slow damper into simple AI damper
+AIDamperFast=0.5	// contribution of average fast damper into simple AI damper
+AIDownforceZArm=0.13	// hard-coded center-of-pressure offset from vehicle CG
+AIDownforceBias=0.8	// bias between setup and hard-coded value (0.0-1.0)
+AITorqueStab=(1.0,1.0,1.0)	// torque adjustment to keep AI stable
+AIFuelMult=-1		// PLR file override for AI fuel usage - only positive value will override, see PLR for default
+AIPerfUsage=(0.85,0.91,0.97)	// (0.97,0.97,0.97)  PLR file overrides for (brake power usage, brake grip usage, corner grip usage) used by AI to estimate performance - only positive values will override, see PLR for defaults
+AITableParams=(-1,-1)	// PLR file overrides for (max load, min radius) used when computing performance estimate tables - only positive values will override, see PLR for defaults
+FeelerFlags=0
+FeelerOffset=(0,0,0)
+FeelersAtCGHeight=9
+FeelerFrontLeft=(0.676,0,-2.1209)
+FeelerFrontRight=(-0.676,0,-2.1209)
+FeelerRearLeft=(0.766,0,2.1209)
+FeelerRearRight=(-0.766,0,2.1209)
+FeelerFront=(0,0,-2.1209)
+FeelerRear=(0,0,2.1209)
+FeelerRight=(-0.92,0,0)
+FeelerLeft=(0.92,0,0)
+FeelerTopFrontLeft=(0.644,0.64,-0.24836)
+FeelerTopFrontRight=(-0.644,0.64,-0.24836)
+FeelerTopRearLeft=(0.644,0.64,1.44836)
+FeelerTopRearRight=(-0.644,0.64,1.44836)
+FeelerBottom=(0,0.25,0)
+
+[PITMENU]
+Preparation=(150,2,1,2)  // How long pit request is active, crew prep time, delay multiplier for how much more time was needed to prep(?), max random delay
+Fuel=1                   // Whether fuel pit menu item is available(0=no 1=yes) 
+FuelTime=(3,1,1,1,1)     // Fuel fill rate (L/s), random delay, nozzle insertion time, nozzle removal time, fuel filling(separate=0, concurrent=1)
+AllTires=0               // Option for changing all tires(0=no 1=yes)
+FrontRearTires=(1,1)     // Option for changing fronts and rears separately(0=no 1=yes)
+TireTime=(10,18,2,1)     // Time to change two tires, time to change four tires, random delay on any tire, tire changes(separate=0, concurrent=1)
+FrontWing=0              // Front wing adjustment: 0=no 1=yes
+RearWing=0               // Rear wing adjustment: 0=no 1=yes
+FrontWingTime=(2.0,12.0) // Time to adjust front wing, time to replace front wing
+RearWingTime=(12.0,60.0) // Time to adjust rear wing, time to replace rear wing
+Damage=2                 // Options to fix damage: (0=none, 1=bodywork only, 2=Choice of bodywork only or repair all)
+DamageTime=(25,5,30,1)  // Time to fix aero damage, random delay, fix suspension including broken off wheels, damage repairs(separate=0, concurrent=1)  
+StopGo=0                 // Whether stop/go pit menu item is available(0=no 1=yes) 
+StopGoSimultaneous=0     // Whether stop/go penalties can be served during a regular pit stop (time is added at end)(0=no 1=yes)
+Driver=0
+
+[AIDPENALTIES]
+TC=(0,0,0)
+ABS=(0,0,0)
+Stability=(0,0,0)
+Autoshift=(0,0,0,0)
+Steering=(0,0,0,0)
+Braking=(0,0,0)
+Invulnerable=(0,0)
+Opposite=(0,0)
+Spinrecovery=(0,0)
+Autopit=(0,0)
+AutoLift=(0,0)
+AutoBlip=(0,0)
+
+[LEFTFENDER] // No Fender! Extra 'body aero' point at FW location.
+FenderFlareRange=(0,0,0)
+FenderFlareSetting=0
+FenderCenter=(0,0.05,-0.5)
+FenderDragParams=(0,0,0)
+FenderLiftParams=(-0.3,0,0)
+FenderSideways=(0)
+
+[RIGHTFENDER] // No Fender! Extra 'body aero' point at RW location.
+FenderFlareRange=(0,0,0)
+FenderFlareSetting=0
+FenderCenter=(0,0.65,2.8892)
+FenderDragParams=(0,0,0)
+FenderLiftParams=(-0.4,0,0)
+FenderSideways=(0)
+
+[FRONTWING]
+FWRange=(0,1,4)
+FWSetting=2
+FWMaxheight=0
+FWDragParams=(0,0.008,0)
+FWLiftParams=(0,-0.032,0)
+FWdraftLiftMult=1
+FWLiftHeight=(0)
+FWLiftSideways=(0.2)
+FWLiftPeakYaw=(10,1)
+FWLeft=(-0.275,0.075)
+FWRight=(0.275,0.075)
+FWUp=(0,0,0)
+FWDown=(0,0,0)
+FWAft=(0,0,0)
+FWFore=(0,0,0)
+FWRot=(0,0,0)
+FWCenter=(0,0.05,-0.5)
+
+[REARWING]
+RWRange=(0,1,8)
+RWSetting=4
+RWMaxheight=0
+RWDragParams=(0,0.00666666666666667,0)
+RWLiftParams=(0,-0.0266666666666667,0)
+RWdraftLiftMult=1
+RWLiftHeight=(0)
+RWLiftSideways=(0.2)
+RWLiftPeakYaw=(10,1)
+RWLeft=(-0.275,0.075)
+RWRight=(0.275,0.075)
+RWUp=(0,0,0)
+RWDown=(0,0,0)
+RWAft=(0,0,0)
+RWFore=(0,0,0)
+RWRot=(0,0,0)
+RWCenter=(0,0.65,0.4)
+
+[BODYAERO]
+BodyDragBase=(0.580)
+BodyDragHeightAvg=(2)
+BodyDragHeightDiff=(2)
+BodyMaxHeight=(0.66)
+BodyLeft=(0,0,0)
+BodyRight=(0,0,0)
+BodyUp=(0,-1.951228,0)
+BodyDown=(0,1.951228,0)
+BodyAft=(0,0.3,-0.5)
+BodyFore=(0,0,0)
+BodyRot=(3,2,1)
+BodyCenter=(0,0.25,-1.36906)
+RadiatorRange=(0,1,0)
+RadiatorSetting=3
+RadiatorDrag=(0.055)
+RadiatorLift=(0)
+BrakeDuctRange=(0,1,0)
+BrakeDuctSetting=0
+BrakeDuctDrag=(2)
+BrakeDuctLift=(0)
+
+[SUSPENSION]
+PhysicalModelFile=CanAm2_susp.pm
+CorrectedInnerSuspHeight=-1
+LimitFastDampers=0
+AdjustSuspRates=2
+AlignWheels=1
+CenterWheelsOnBodyX=0
+FrontWheelTrack=0.0
+RearWheelTrack=0.0
+LeftWheelBase=0.0
+RightWheelBase=0.0
+SpringBasedAntiSway=1
+AllowNoAntiSway=0
+FrontAntiswayBase=0
+FrontAntiswayRange=(30000,7500,9)
+FrontAntiswaySetting=4
+RearAntiswayBase=0
+RearAntiswayRange=(7500,5625,9)
+RearAntiswaySetting=4
+FrontToeInRange=(-0.7,0.1,10)
+FrontToeInSetting=5
+RearToeInRange=(-0.1,0.1,10)
+RearToeInSetting=5
+LeftCasterRange=(-2.0, 0.1, 91)          // front-left caster
+LeftCasterSetting=70
+RightCasterRange=(-2.0, 0.1, 91)         // front-right caster
+RightCasterSetting=70
+//RearWheelTrack=1.540
+//
+//
+//
+
+[CONTROLS]
+SteeringFFBMult=6.0
+SteerLockRange=(5.0, 1.0, 20)
+SteerLockSetting=11
+RearBrakeRange=(0.200, 0.005, 121)
+RearBrakeSetting=52
+BrakePressureRange=(0.60, 0.01, 41)
+BrakePressureSetting=40
+HandbrakePressRange=(0.0) 
+HandbrakePressSetting=0
+UpshiftAlgorithm=(0.0,6800)
+DownshiftAlgorithm=(0.6,0.45,0)
+AutoUpshiftGripThresh=0.63
+AutoDownshiftGripThresh=0.63
+TractionControlGrip=(1,0.2)
+TractionControlLevel=(0.3,0.9)
+ABS4Wheel=1
+ABSGrip=(1.33,0.33)
+ABSLevel=(0.4,0.8)
+OnboardBrakeBias=1
+
+[ENGINE]
+Normal=CanAm3_engine.ini
+RestrictorPlate=CanAm3_engine.ini
+
+[DRIVELINE]
+ClutchInertia=0.015
+ClutchTorque=1255.5
+ClutchWear=8
+ClutchFriction=15
+BaulkTorque=1200
+ClutchEngageRate=2
+AllowManualOverride=0
+SemiAutomatic=0
+UpshiftDelay=0.22
+UpshiftClutchTime=0.0
+UpshiftLiftThrottle=2.0
+DownshiftDelay=0.30
+DownshiftClutchTime=0.0
+DownshiftBlipThrottle=0.0
+WheelDrive=REAR
+GearFile=canam_gears.ini
+AllowGearingChanges=1
+AllowFinalDriveChanges=1
+FinalDriveSetting=3
+ForwardGears=4
+ReverseSetting=3
+Gear1Setting=10
+Gear2Setting=19
+Gear3Setting=34
+Gear4Setting=45
+//
+//
+//
+DiffPumpTorque=0
+DiffPumpRange=(0,0,0)
+DiffPumpSetting=0
+DiffPowerRange=(0.70,0.00,1)
+DiffPowerSetting=0
+DiffCoastRange=(0.30,0.00,1)
+DiffCoastSetting=0
+DiffPreloadRange=(1,5,5)
+DiffPreloadSetting=3
+//
+//
+//
+//
+//
+// Preload4WDEffect=(0.0, 0.0, 0.0) // according to ISI not implemented
+
+[FRONTLEFT]
+BumpTravel=-0.02
+ReboundTravel=-0.13
+BumpStopSpring=43223.18
+BumpStopRisingSpring=6483477.36
+BumpStopDamper=864.46
+BumpStopRisingDamper=518678.19
+BumpStage2=0.1
+ReboundStage2=-0.1
+FrictionTorque=4
+SpinInertia=1.17405536357813
+SpinInertiaAI=1.5
+PushrodSpindle=(0,-0.1,0)
+PushrodBody=(-0.10718,0.3,0)
+CamberRange=(-2.7,0.1,30)
+CamberSetting=15
+PressureRange=(90.0, 1.0, 106)
+PressureSetting=27 //33
+PackerRange=(0,0,0)
+PackerSetting=0
+SpringMult=1.07179676972449
+SpringRange=(30873.7,2058.25,11)
+SpringSetting=5
+RideHeightRange=(0.060, 0.0025, 21)
+RideHeightSetting=4
+DamperMult=1.07179676972449
+SlowBumpRange=(1567.7,386.08,5)
+SlowBumpSetting=2
+FastBumpRange=(1772.15,295.36,5)
+FastBumpSetting=2
+SlowReboundRange=(3919.26,965.19,5)
+SlowReboundSetting=2
+FastReboundRange=(3060.98,510.16,5)
+FastReboundSetting=2
+BrakeDiscRange=(0.022, 0.000, 0)
+BrakeDiscSetting=1
+BrakePadRange=(0, 1, 5)
+BrakePadSetting=2
+BrakeDiscInertia=2.308
+BrakeResponseCurve=(20,35,450,620)
+BrakeWearRate=1.215e-011
+BrakeFailure=(1.33e-002,7.20e-004)
+BrakeTorque=2450.0
+BrakeHeating=0.00065
+BrakeCooling=(2.910e-002,2.667e-004)
+BrakeDuctCooling=2.000e-004
+
+
+[FRONTRIGHT]
+BumpTravel=-0.02
+ReboundTravel=-0.13
+BumpStopSpring=43223.18
+BumpStopRisingSpring=6483477.36
+BumpStopDamper=864.46
+BumpStopRisingDamper=518678.19
+BumpStage2=0.1
+ReboundStage2=-0.1
+FrictionTorque=4
+SpinInertia=1.17405536357813
+SpinInertiaAI=1.5
+PushrodSpindle=(0,-0.1,0)
+PushrodBody=(0.10718,0.3,0)
+CamberRange=(-2.7,0.1,30)
+CamberSetting=15
+PressureRange=(90.0, 1.0, 106)
+PressureSetting=27 //33
+PackerRange=(0,0,0)
+PackerSetting=0
+SpringMult=1.07179676972449
+SpringRange=(30873.7,2058.25,11)
+SpringSetting=5
+RideHeightRange=(0.060, 0.0025, 21)
+RideHeightSetting=4
+DamperMult=1.07179676972449
+SlowBumpRange=(1567.7,386.08,5)
+SlowBumpSetting=2
+FastBumpRange=(1772.15,295.36,5)
+FastBumpSetting=2
+SlowReboundRange=(3919.26,965.19,5)
+SlowReboundSetting=2
+FastReboundRange=(3060.98,510.16,5)
+FastReboundSetting=2
+BrakeDiscRange=(0.022, 0.000, 0)
+BrakeDiscSetting=1
+BrakePadRange=(0, 1, 5)
+BrakePadSetting=2
+BrakeDiscInertia=2.308
+BrakeResponseCurve=(20,35,450,620)
+BrakeWearRate=1.215e-011
+BrakeFailure=(1.33e-002,7.20e-004)
+BrakeTorque=2450.0
+BrakeHeating=0.00065
+BrakeCooling=(2.910e-002,2.667e-004)
+BrakeDuctCooling=2.000e-004
+
+
+[REARLEFT]
+BumpTravel=-0.02
+ReboundTravel=-0.17
+BumpStopSpring=47373.45
+BumpStopRisingSpring=7106018.05
+BumpStopDamper=947.47
+BumpStopRisingDamper=568481.44
+BumpStage2=0.0821428571428571
+ReboundStage2=-0.0821428571428571
+FrictionTorque=9
+SpinInertia=1.967221872
+SpinInertiaAI=2
+PushrodSpindle=(0,-0.1,0)
+PushrodBody=(-0.10718,0.3,0)
+CamberRange=(-2.2,0.1,30)
+CamberSetting=15
+PressureRange=(90.0, 1.0, 106)
+PressureSetting=41//33
+PackerRange=(0,0,0)
+PackerSetting=0
+SpringMult=1.07179676972449
+SpringRange=(33205.69,2213.71,11)
+SpringSetting=5
+RideHeightRange=(0.0775, 0.0025, 26)
+RideHeightSetting=5
+DamperMult=1.07179676972449
+SlowBumpRange=(1847.4,454.96,5)
+SlowBumpSetting=2
+FastBumpRange=(2195.14,365.86,5)
+FastBumpSetting=2
+SlowReboundRange=(4618.5,1137.39,5)
+SlowReboundSetting=2
+FastReboundRange=(3791.6,631.93,5)
+FastReboundSetting=2
+BrakeDiscRange=(0.022, 0.000, 0)
+BrakeDiscSetting=1
+BrakePadRange=(0, 1, 5)
+BrakePadSetting=2
+BrakeDiscInertia=2.565
+BrakeResponseCurve=(20,35,450,620)
+BrakeWearRate=1.215e-011
+BrakeFailure=(1.33e-002,7.20e-004)
+BrakeTorque=2270.0
+BrakeHeating=0.00065
+BrakeCooling=(2.910e-002,2.667e-004)
+BrakeDuctCooling=0.900e-004
+
+
+[REARRIGHT]
+BumpTravel=-0.02
+ReboundTravel=-0.17
+BumpStopSpring=47373.45
+BumpStopRisingSpring=7106018.05
+BumpStopDamper=947.47
+BumpStopRisingDamper=568481.44
+BumpStage2=0.0821428571428571
+ReboundStage2=-0.0821428571428571
+FrictionTorque=9
+SpinInertia=1.967221872
+SpinInertiaAI=2
+PushrodSpindle=(0,-0.1,0)
+PushrodBody=(0.10718,0.3,0)
+CamberRange=(-2.2,0.1,30)
+CamberSetting=15
+PressureRange=(90.0, 1.0, 106)
+PressureSetting=41//33
+PackerRange=(0,0,0)
+PackerSetting=0
+SpringMult=1.07179676972449
+SpringRange=(33205.69,2213.71,11)
+SpringSetting=5
+RideHeightRange=(0.0775, 0.0025, 26)
+RideHeightSetting=5
+DamperMult=1.07179676972449
+SlowBumpRange=(1847.4,454.96,5)
+SlowBumpSetting=2
+FastBumpRange=(2195.14,365.86,5)
+FastBumpSetting=2
+SlowReboundRange=(4618.5,1137.39,5)
+SlowReboundSetting=2
+FastReboundRange=(3791.6,631.93,5)
+FastReboundSetting=2
+BrakeDiscRange=(0.022, 0.000, 0)
+BrakeDiscSetting=1
+BrakePadRange=(0, 1, 5)
+BrakePadSetting=2
+BrakeDiscInertia=2.565
+BrakeResponseCurve=(20,35,450,620)
+BrakeWearRate=1.215e-011
+BrakeFailure=(1.33e-002,7.20e-004)
+BrakeTorque=2270.0
+BrakeHeating=0.00065
+BrakeCooling=(2.910e-002,2.667e-004)
+BrakeDuctCooling=0.900e-004

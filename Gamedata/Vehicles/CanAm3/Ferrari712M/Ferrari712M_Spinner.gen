@@ -1,0 +1,156 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// This file specifices how to generate the vehicle graphics for the options car spinner only.
+// It is pointed to by one or more *.veh files.
+//
+// All information except tokens are copied directly.
+// Tokens have the format "<value>" where value is one of the following:
+//   ID        - this is replaced by the proper slot identification (000, 001, etc.), or
+//   1,2,3,etc - this is replaced by the first 1,2,3 characters of the
+//               vehicle filename
+//   VEHDIR    - this is replaced with the proper vehicles directory (e.g. E:\Data\season01\vehicles)
+//   TEAMDIR   - this is replaced with the proper team directory (e.g. season01\vehicles\williams)
+//   SPIN      - for the vehicle spinner in the options only
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//----------------------------------------
+
+SearchPath=<VEHDIR>
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3
+SearchPath=<VEHDIR>\CanAm3\Ferrari712M
+SearchPath=<VEHDIR>\CanAm3\Ferrari712M\Team
+
+MASFile=Ferrari712M\ferrari712m.mas
+
+
+ReflectPlane=(0.0, -1.0, 0.0, 0.0)
+
+//----------------------------------------
+Instance=SLOT<ID>
+{
+  Moveable=True
+  MeshFile=712_Chassis_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+  MeshFile=712_Chassis_Max.gmt CollTarget=False HATTarget=False ShadowObject=(Dynamic, Solid, 256, 256) LODIn=(0.0) LODOut=(200.0) Reflect=True
+  MeshFile=712_Dash_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+  MeshFile=712_Gauges_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+  MeshFile=712_Leads_Max.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+  MeshFile=712_Trumpit_C.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(100.0) Reflect=True
+
+  Actor=VEHICLE
+////////////////////////////////////Stearing Wheel/////////////////
+  Instance=wheel
+  {
+    Moveable=True
+    MeshFile=712_swheel_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//////////////////////////////////// Front wing /////////////////
+Instance=Fwing
+   {
+    Moveable=True
+    MeshFile=712_Fwing_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True 
+    //MeshFile=712_Badge.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True 
+   }
+////////////////////////////////////Rear wing/////////////////
+  Instance=Rwing
+  {
+    Moveable=True
+    MeshFile=712_Rwing_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True 
+  }
+////////////////////////////////////AirBox/////////////////
+  Instance=Airbox
+  {
+    Moveable=True
+    MeshFile=712_Airbox_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//////////////////////////////////// Suspension/////////////////
+  Instance=DEBRIS5
+  {
+    Moveable=True
+    MeshFile=712_fl_Susp_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+  Instance=DEBRIS6
+  {
+    Moveable=True
+    MeshFile=712_fr_Susp_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+  Instance=DEBRIS7
+  {
+    Moveable=True
+    MeshFile=712_rl_Susp_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+  Instance=DEBRIS8
+  {
+    Moveable=True
+    MeshFile=712_rr_Susp_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//////////////////////////////////// TV CAM /////////////////////////////////////////////////////////////////////////////////
+  Instance=DEBRIS11
+  {
+    Moveable=True
+    MeshFile=712_exhausts_Max.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//////////////////////////////////// MIRRORS ///////////////////////////////////////////////////////////////////////////////
+  Instance=DSMirror
+  {
+    Moveable=True
+    MeshFile=712_mirrors_Out.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+  }
+//  Instance=PSMirror
+//  {
+//    Moveable=True
+//    MeshFile=712_mirrorL.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 64, 64) LODIn=(0.0) LODOut=(350.0) Reflect=True
+//  }
+/////////////////////////////////////////////////TIRES////////////////////////////////////////////////////////
+/////////////////////////////////Left Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=LFTIRE
+  {
+    Moveable=True
+    MeshFile=712_FL_Tyre.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+    MeshFile=712_FL_Rim.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+  }
+
+  Instance=LFSpindle
+  {
+    Moveable=True
+    MeshFile=712_fl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) Reflect=True
+  }
+/////////////////////////////////Right Front Tire and Spindle//////////////////////////////////////////////////
+  Instance=RFTIRE
+  {
+   Moveable=True
+    MeshFile=712_FR_Tyre.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+    MeshFile=712_FR_Rim.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+  }
+
+  Instance=RFSpindle
+  {
+    Moveable=True
+    MeshFile=712_fr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) Reflect=True
+  }
+/////////////////////////////////Left Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=LRTIRE
+  {
+    Moveable=True
+    MeshFile=712_RL_Tyre.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+    MeshFile=712_RL_Rim.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+  }
+
+  Instance=LRSpindle
+  {
+    Moveable=True
+    MeshFile=712_rl_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) Reflect=True
+  }
+/////////////////////////////////Right Rear Tire and Spindle//////////////////////////////////////////////////
+  Instance=RRTIRE
+  {
+    Moveable=True
+    MeshFile=712_RR_Tyre.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+    MeshFile=712_RR_Rim.gmt CollTarget=False HATTarget=False ShadowCaster=(True, Solid, 128, 128) LODIn=(0.00) LODOut=(350.0) Reflect=True
+  }
+
+  Instance=RRSpindle
+  {
+    Moveable=True
+    MeshFile=712_rr_spindle.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(20.0) Reflect=True
+  }
+}
